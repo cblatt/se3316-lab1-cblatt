@@ -34,19 +34,20 @@ function numFunc(){
         alert("Name: " + pokeName[numText.value-1] + "\nNumber: " + pokeNum[numText.value-1] + "\nGeneration: " + pokeGen[numText.value-1] + "\nRegion: " + pokeReg[numText.value-1] + "\nRarity: " + pokeRar[numText.value-1]);
     }
 }
-numBtn.addEventListener('click', numFunc); // submit button event
-// enter key event
-numBtn.addEventListener("keypress", function(event){
-    if(event.key === "Enter"){
-        event.preventDefault();
-        document.getElementById("numBtn").click();
+numBtn.addEventListener('click', numFunc); // submit button event for number textbox
+// enter button event for number textbox
+numText.addEventListener('keydown', function(event){
+    if(event.code == 'Enter'){
+        numBtn.click();
     }
-});
+}) 
+
 
 // search for pokemon by name
-var nameText = "";
-nameText = document.getElementById('pName');
+var nameText = document.getElementById('pName');
 var nameBtn = document.getElementById('nameBtn');
+
+console.log(nameText.value);
 
 function nameFunc(){
     if(/^[a-zA-Z]+$/.test(nameText.value)){
@@ -70,12 +71,13 @@ function nameFunc(){
     
 
 }
-nameBtn.addEventListener('click', nameFunc); // submit button event
-// enter key event
-nameBtn.addEventListener("keypress", function(event){
-    if(event.key === "Enter"){
-        event.preventDefault();
-        document.getElementById("nameBtm").click();
+nameBtn.addEventListener('click', nameFunc); // submit button event for name textbox
+// enter button event for name textbox
+nameText.addEventListener('keydown', function(event){
+    if(event.code == 'Enter'){
+        nameBtn.click();
     }
-});
+})    
+
+// NEED TO IGNORE CASE SENSITIVITY
 
