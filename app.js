@@ -6,6 +6,7 @@ for(var i=1; i<41; i+=2){
     pokeArray.push(num);
 }
 
+
 // array to hold the pokemon names
 const pokeName = ['Bulbasaur', 'Ivysaur', 'Venusaur', 'Charmander', 'Charmeleon', 'Charizard', 'Squirtle', 'Wartortle', 'Blastoise', 'Caterpie', 'Metapod', 'Butterfree', 
                 'Weedle', 'Kakuna', 'Beedrill', 'Pidgey', 'Pidgeotto', 'Pidgeot', 'Rattata', 'Raticate'];
@@ -21,3 +22,19 @@ const pokeReg = ['Wild', 'Wild', 'Wild', 'Wild', 'Wild', 'Wild', 'Wild', 'Wild',
 
 // Array to hold the pokemon rarity
 const pokeRar = [4, 5, 6, 4, 5, 6, 4, 5, 6, 1, 3, 4, 1, 3, 4, 1, 3, 4, 1, 4];
+
+// search for pokemon by number
+var numText = document.getElementById('pNum');
+var numBtn = document.getElementById('numBtn');
+function numFunc(){
+    if(isNaN(numText.value) || numText.value<1 || numText.value>20){
+        alert("Invalid input");
+    }
+    else{
+        alert("Name: " + pokeName[numText.value-1] + "\nNumber: " + pokeNum[numText.value-1] + "\nGeneration: " + pokeGen[numText.value-1] + "\nRegion: " + pokeReg[numText.value-1] + "\nRarity: " + pokeRar[numText.value-1]);
+    }
+    
+    
+}
+numBtn.addEventListener('click', numFunc);
+
