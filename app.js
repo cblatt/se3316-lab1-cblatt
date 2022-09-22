@@ -16,10 +16,10 @@ const pokeReg = ['Wild', 'Wild', 'Wild', 'Wild', 'Wild', 'Wild', 'Wild', 'Wild',
 const pokeRar = [4, 5, 6, 4, 5, 6, 4, 5, 6, 1, 3, 4, 1, 3, 4, 1, 3, 4, 1, 4];
 
 // search for pokemon by number
-var numText = document.getElementById('pNum');
-var numBtn = document.getElementById('numBtn');
+var numText = document.getElementById('pNum'); // getting textbox
+var numBtn = document.getElementById('numBtn'); // getting button
 function numFunc(){
-    if(isNaN(numText.value) || numText.value<1 || numText.value>20){
+    if(isNaN(numText.value) || numText.value<1 || numText.value>20){ // making sure that the input is a number between 0-20
         alert("Invalid input");
     }
     else{
@@ -34,17 +34,14 @@ numText.addEventListener('keydown', function(event){
     }
 }) 
 
-
 // search for pokemon by name
-var nameText = document.getElementById('pName');
-var nameBtn = document.getElementById('nameBtn');
-
-console.log(nameText.value);
+var nameText = document.getElementById('pName'); // getting textbox
+var nameBtn = document.getElementById('nameBtn'); // getting btuton
 
 function nameFunc(){
-    if(/^[a-zA-Z]+$/.test(nameText.value)){
-        var names = "";
-        for(var i=0; i<20; i++){
+    if(/^[a-zA-Z]+$/.test(nameText.value)){ // making sure input is only a-z and A-Z
+        var names = ""; // empty string to hold the pokemon info
+        for(var i=0; i<20; i++){ // looping through pokeNames array and checking if the elements include the textbox input
             if(pokeName[i].toLowerCase().includes(nameText.value.toLowerCase())){
                names += "Name: " + pokeName[i] + "\nNumber: " + pokeNum[i] + "\nGeneration: " + pokeGen[i] + "\nRegion: " + pokeReg[i] + "\nRarity: " + pokeRar[i] + "\n\n";
             }
@@ -59,9 +56,6 @@ function nameFunc(){
     else{
         alert("Invalid input");
     }
-    
-    
-
 }
 nameBtn.addEventListener('click', nameFunc); // submit button event for name textbox
 // enter button event for name textbox
