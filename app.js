@@ -64,5 +64,5 @@ nameText.addEventListener('keydown', function(event){
         nameBtn.click();
     }
 })    
-// for git ignore file just do *.png
+
 
