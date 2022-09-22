@@ -37,16 +37,29 @@ function numFunc(){
 numBtn.addEventListener('click', numFunc);
 
 // search for pokemon by name
-var nameText = document.getElementById('pName');
+var nameText = "";
+nameText = document.getElementById('pName');
 var nameBtn = document.getElementById('nameBtn');
+
 function nameFunc(){
-    var names = "";
-    for(var i=0; i<20; i++){
-        if(pokeName[i].includes(nameText.value)){
-            names += "Name: " + pokeName[i] + "\nNumber: " + pokeNum[i] + "\nGeneration: " + pokeGen[i] + "\nRegion: " + pokeReg[i] + "\nRarity: " + pokeRar[i] + "\n\n";
+    if(/^[a-zA-Z]+$/.test(nameText.value)){
+        var names = "";
+        for(var i=0; i<20; i++){
+            if(pokeName[i].includes(nameText.value)){
+               names += "Name: " + pokeName[i] + "\nNumber: " + pokeNum[i] + "\nGeneration: " + pokeGen[i] + "\nRegion: " + pokeReg[i] + "\nRarity: " + pokeRar[i] + "\n\n";
+            }
+        }
+        if(names.length === 0){
+            alert("No pokemon found");
+        }
+        else{
+            alert(names);
         }
     }
-    alert(names);
+    else{
+        alert("Invalid input");
+    }
+    
     
 
 }
