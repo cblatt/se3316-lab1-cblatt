@@ -53,7 +53,7 @@ function nameFunc(){
     if(/^[a-zA-Z]+$/.test(nameText.value)){
         var names = "";
         for(var i=0; i<20; i++){
-            if(pokeName[i].includes(nameText.value)){
+            if(pokeName[i].toLowerCase().includes(nameText.value.toLowerCase())){
                names += "Name: " + pokeName[i] + "\nNumber: " + pokeNum[i] + "\nGeneration: " + pokeGen[i] + "\nRegion: " + pokeReg[i] + "\nRarity: " + pokeRar[i] + "\n\n";
             }
         }
@@ -78,6 +78,4 @@ nameText.addEventListener('keydown', function(event){
         nameBtn.click();
     }
 })    
-
-// NEED TO IGNORE CASE SENSITIVITY
 
