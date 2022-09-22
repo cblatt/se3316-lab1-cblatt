@@ -34,7 +34,14 @@ function numFunc(){
         alert("Name: " + pokeName[numText.value-1] + "\nNumber: " + pokeNum[numText.value-1] + "\nGeneration: " + pokeGen[numText.value-1] + "\nRegion: " + pokeReg[numText.value-1] + "\nRarity: " + pokeRar[numText.value-1]);
     }
 }
-numBtn.addEventListener('click', numFunc);
+numBtn.addEventListener('click', numFunc); // submit button event
+// enter key event
+numBtn.addEventListener("keypress", function(event){
+    if(event.key === "Enter"){
+        event.preventDefault();
+        document.getElementById("numBtn").click();
+    }
+});
 
 // search for pokemon by name
 var nameText = "";
@@ -63,5 +70,12 @@ function nameFunc(){
     
 
 }
-nameBtn.addEventListener('click', nameFunc);
+nameBtn.addEventListener('click', nameFunc); // submit button event
+// enter key event
+nameBtn.addEventListener("keypress", function(event){
+    if(event.key === "Enter"){
+        event.preventDefault();
+        document.getElementById("nameBtm").click();
+    }
+});
 
