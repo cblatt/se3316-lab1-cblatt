@@ -1,3 +1,11 @@
+// creating an array of the pokemon in the unordered list
+var pokeList = document.getElementById('pokemon').childNodes;
+var pokeArray = [];
+for(var i=1; i<41; i+=2){
+    var num = pokeList[i];
+    pokeArray.push(num);
+}
+
 // array to hold the pokemon names
 const pokeName = ['Bulbasaur', 'Ivysaur', 'Venusaur', 'Charmander', 'Charmeleon', 'Charizard', 'Squirtle', 'Wartortle', 'Blastoise', 'Caterpie', 'Metapod', 'Butterfree', 
                 'Weedle', 'Kakuna', 'Beedrill', 'Pidgey', 'Pidgeotto', 'Pidgeot', 'Rattata', 'Raticate'];
