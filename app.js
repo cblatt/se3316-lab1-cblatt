@@ -65,33 +65,37 @@ nameText.addEventListener('keydown', function(event){
     }
 })
 
-// add to list
+// dynamically change list for name text box
 var pokemonList = document.getElementById("pokemon");
 function nameFunc2(){
     for(var i=0; i<20; i++){
         if(/^[a-zA-Z]+$/.test(nameText.value)){
             if(pokeName[i].toLowerCase().includes(nameText.value.toLowerCase())){
 
-                var lineBreak = document.createElement("br");
+                var lineBreak = document.createElement("br"); // line break element
                 
+                // adding image to list
                 var image = document.createElement('img');
                 image.src = 'pokemon/' + (i+1) + '.png';
                 pokemonList.appendChild(image);
                 
+                // adding name to list
                 var nameNode = document.createTextNode("Name: " + pokeName[i]);
                 pokemonList.appendChild(nameNode);
                 
-
+                // adding number to list
                 var numNode = document.createTextNode(", Number: " + pokeNum[i]);
                 pokemonList.appendChild(numNode);
                 
-
+                // adding generation to list
                 var genNode = document.createTextNode(", Generation: " + pokeGen[i]);
                 pokemonList.appendChild(genNode);
 
+                // adding region to list
                 var regNode = document.createTextNode(", Region: " + pokeReg[i]);
                 pokemonList.appendChild(regNode);
 
+                // adding rarity to list
                 var rarNode = document.createTextNode(", Rarity: " + pokeRar[i]);
                 pokemonList.appendChild(rarNode); 
                 pokemonList.appendChild(lineBreak);
@@ -109,8 +113,8 @@ function clearList(){
         pokemonList.removeChild(pokemonList.firstChild);
     }
 }
-nameText.addEventListener('keyup', clearList);
-nameText.addEventListener('keyup', nameFunc2);
+nameText.addEventListener('keyup', clearList); // clear the list on each keypress
+nameText.addEventListener('keyup', nameFunc2); // search for pokemon on each keypress
 
 
 
