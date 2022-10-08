@@ -15,7 +15,7 @@ const pokeReg = ['Wild', 'Wild', 'Wild', 'Wild', 'Wild', 'Wild', 'Wild', 'Wild',
 // Array to hold the pokemon rarity
 const pokeRar = [4, 5, 6, 4, 5, 6, 4, 5, 6, 1, 3, 4, 1, 3, 4, 1, 3, 4, 1, 4];
 
-// search for pokemon by number
+// search for pokemon by number (used for submit button)
 var numText = document.getElementById('pNum'); // getting textbox
 var numBtn = document.getElementById('numBtn'); // getting button
 function numFunc(){
@@ -38,6 +38,7 @@ numText.addEventListener('keydown', function(event){
 var nameText = document.getElementById('pName'); // getting textbox
 var nameBtn = document.getElementById('nameBtn'); // getting btuton
 
+// search for pokemon by name (used for submit button)
 function nameFunc(){
     if(/^[a-zA-Z]+$/.test(nameText.value)){ // making sure input is only a-z and A-Z
         var names = ""; // empty string to hold the pokemon info
@@ -65,8 +66,55 @@ nameText.addEventListener('keydown', function(event){
     }
 })
 
+// function to clear list after every key press
+function clearList(){
+    while(pokemonList.firstChild){
+        pokemonList.removeChild(pokemonList.firstChild);
+    }
+}
+
+var pokemonList = document.getElementById("pokemon"); // variable to hold pokemon list
+
 // dynamically change list for name text box
-var pokemonList = document.getElementById("pokemon");
+function numFunc2(){
+    for(var i=0; i<20; i++){
+        if(pokeNum[i] == numText.value){
+            var lineBreak = document.createElement("br"); // line break element
+                    
+            // adding image to list
+            var image = document.createElement('img');
+            image.src = 'pokemon/' + (i+1) + '.png';
+            pokemonList.appendChild(image);
+                    
+            // adding name to list
+            var nameNode = document.createTextNode("Name: " + pokeName[i]);
+            pokemonList.appendChild(nameNode);
+                    
+            // adding number to list
+            var numNode = document.createTextNode(", Number: " + pokeNum[i]);
+            pokemonList.appendChild(numNode);
+                    
+            // adding generation to list
+            var genNode = document.createTextNode(", Generation: " + pokeGen[i]);
+            pokemonList.appendChild(genNode);
+    
+            // adding region to list
+            var regNode = document.createTextNode(", Region: " + pokeReg[i]);
+            pokemonList.appendChild(regNode);
+    
+            // adding rarity to list
+            var rarNode = document.createTextNode(", Rarity: " + pokeRar[i]);
+            pokemonList.appendChild(rarNode); 
+            pokemonList.appendChild(lineBreak);
+        }
+    }  
+}
+
+// event listeners for number text box
+numText.addEventListener('keyup', clearList); // clear the list on each keypress
+numText.addEventListener('keyup', numFunc2); // search for pokemon on each keypress
+
+// dynamically change list for name text box
 function nameFunc2(){
     for(var i=0; i<20; i++){
         if(/^[a-zA-Z]+$/.test(nameText.value)){
@@ -107,12 +155,7 @@ function nameFunc2(){
         }
     }
 
-// function to clear list after every key press
-function clearList(){
-    while(pokemonList.firstChild){
-        pokemonList.removeChild(pokemonList.firstChild);
-    }
-}
+// event listeners for name text box
 nameText.addEventListener('keyup', clearList); // clear the list on each keypress
 nameText.addEventListener('keyup', nameFunc2); // search for pokemon on each keypress
 
