@@ -71,16 +71,47 @@ function nameFunc2(){
     for(var i=0; i<20; i++){
         if(/^[a-zA-Z]+$/.test(nameText.value)){
             if(pokeName[i].toLowerCase().includes(nameText.value.toLowerCase())){
-                var node = document.createElement("li");
-                var attribute = document.createAttribute("img");
-                attribute.value = "pokemon/19.png"
-                node.setAttributeNode(attribute);
-                pokemonList.appendChild(node);
+
+                var lineBreak = document.createElement("br");
+                
+                var image = document.createElement('img');
+                image.src = 'pokemon/' + (i+1) + '.png';
+                pokemonList.appendChild(image);
+                
+                var nameNode = document.createTextNode("Name: " + pokeName[i]);
+                pokemonList.appendChild(nameNode);
+                
+
+                var numNode = document.createTextNode(", Number: " + pokeNum[i]);
+                pokemonList.appendChild(numNode);
+                
+
+                var genNode = document.createTextNode(", Generation: " + pokeGen[i]);
+                pokemonList.appendChild(genNode);
+
+                var regNode = document.createTextNode(", Region: " + pokeReg[i]);
+                pokemonList.appendChild(regNode);
+
+                var rarNode = document.createTextNode(", Rarity: " + pokeRar[i]);
+                pokemonList.appendChild(rarNode); 
+                pokemonList.appendChild(lineBreak);
+                
+
+                
             }
         }
         }
     }
+
+// function to clear list after every key press
+function clearList(){
+    while(pokemonList.firstChild){
+        pokemonList.removeChild(pokemonList.firstChild);
+    }
+}
+nameText.addEventListener('keyup', clearList);
 nameText.addEventListener('keyup', nameFunc2);
+
 
 
 
