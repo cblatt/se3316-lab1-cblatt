@@ -19,77 +19,87 @@
         <input type="text" id="pName" placeholder="Enter Name" maxlength="20">
         <input type="button" id="nameBtn" value="Submit">
 
+        <div id="dynamicList">
+            <ul id="pokemon">
+                
+            </ul>
+        </div>
+
         <!-- unordered list of 20 pokemon -->
-        <ul id="pokemon">
+        <ul id="pokemonList">
             <li>
-                <img src="pokemon/1.png" width="200" height="200" alt="Bulbasaur"> <br>001 Bulbasaur</br>
+                <img src="pokemon/1.png" class="pokeImage" width="200" height="200" alt="Bulbasaur"> <br>001 Bulbasaur
             </li>
             <li>
-                <img src="pokemon/2.png" width="200" height="200" alt="Ivysaur"> <br>002 Ivysaur</br>
+                <img src="pokemon/2.png" class="pokeImage" width="200" height="200" alt="Ivysaur"> <br>002 Ivysaur
             </li>
             <li>
-                <img src="pokemon/3.png" width="200" height="200" alt="Venasaur"> <br>003 Venasaur</br>
+                <img src="pokemon/3.png" class="pokeImage" width="200" height="200" alt="Venasaur"> <br>003 Venasaur
             </li>
             <li>
-                <img src="pokemon/4.png" width="200" height="200" alt="Charmander"> <br>004 Charmander</br>
+                <img src="pokemon/4.png" class="pokeImage" width="200" height="200" alt="Charmander"> <br>004 Charmander
             </li>
             <li>
-                <img src="pokemon/5.png" width="200" height="200" alt="Charmeleon"> <br>005 Charmeleon</br>
+                <img src="pokemon/5.png" class="pokeImage" width="200" height="200" alt="Charmeleon"> <br>005 Charmeleon
             </li>
             <li>
-                <img src="pokemon/6.png" width="200" height="200" alt="Charizard"> <br>006 Charizard</br>
+                <img src="pokemon/6.png" class="pokeImage" width="200" height="200" alt="Charizard"> <br>006 Charizard
             </li>
             <li>
-                <img src="pokemon/7.png" width="200" height="200" alt="Squirtle"> <br>007 Squirtle</br>
+                <img src="pokemon/7.png" class="pokeImage" width="200" height="200" alt="Squirtle"> <br>007 Squirtle
             </li>
             <li>
-                <img src="pokemon/8.png" width="200" height="200" alt="Wartortle"> <br>008 Wartortle</br>
+                <img src="pokemon/8.png" class="pokeImage" width="200" height="200" alt="Wartortle"> <br>008 Wartortle
             </li>
             <li>
-                <img src="pokemon/9.png" width="200" height="200" alt="Blastoise"> <br>009 Blastoise</br>
+                <img src="pokemon/9.png" class="pokeImage" width="200" height="200" alt="Blastoise"> <br>009 Blastoise
             </li>
             <li>
-                <img src="pokemon/10.png" width="200" height="200" alt="Caterpie"> <br>010 Caterpie</br>
+                <img src="pokemon/10.png" class="pokeImage" width="200" height="200" alt="Caterpie"> <br>010 Caterpie
             </li>
             <li>
-                <img src="pokemon/11.png" width="200" height="200" alt="Metapod"> <br>011 Metapod</br>
+                <img src="pokemon/11.png" class="pokeImage" width="200" height="200" alt="Metapod"> <br>011 Metapod
             </li>
             <li>
-                <img src="pokemon/12.png" width="200" height="200" alt="Butterfree"> <br>012 Butterfree</br>
+                <img src="pokemon/12.png" class="pokeImage" width="200" height="200" alt="Butterfree"> <br>012 Butterfree
             </li>
             <li>
-                <img src="pokemon/13.png" width="200" height="200" alt="Weedle"> <br>013 Weedle</br>
+                <img src="pokemon/13.png" class="pokeImage" width="200" height="200" alt="Weedle"> <br>013 Weedle
             </li>
             <li>
-                <img src="pokemon/14.png" width="200" height="200" alt="Kakuna"> <br>014 Kakuna</br>
+                <img src="pokemon/14.png" class="pokeImage" width="200" height="200" alt="Kakuna"> <br>014 Kakuna
             </li>
             <li>
-                <img src="pokemon/15.png" width="200" height="200" alt="Beedrill"> <br>015 Beedrill</br>
+                <img src="pokemon/15.png" class="pokeImage" width="200" height="200" alt="Beedrill"> <br>015 Beedrill
             </li>
             <li>
-                <img src="pokemon/16.png" width="200" height="200" alt="Pidgey"> <br>016 Pidgey</br>
+                <img src="pokemon/16.png" class="pokeImage" width="200" height="200" alt="Pidgey"> <br>016 Pidgey
             </li>
             <li>
-                <img src="pokemon/17.png" width="200" height="200" alt="Pidgeotto"> <br>017 Pidgeotto</br>
+                <img src="pokemon/17.png" class="pokeImage" width="200" height="200" alt="Pidgeotto"> <br>017 Pidgeotto
             </li>
             <li>
-                <img src="pokemon/18.png" width="200" height="200" alt="Pidgeot"> <br>018 Pidgeot</br>
+                <img src="pokemon/18.png" class="pokeImage" width="200" height="200" alt="Pidgeot"> <br>018 Pidgeot
             </li>
             <li>
-                <img src="pokemon/19.png" width="200" height="200" alt="Rattata"> <br>019 Rattata</br>
+                <img src="pokemon/19.png" class="pokeImage" width="200" height="200" alt="Rattata"> <br>019 Rattata
             </li>
             <li>
-                <img src="pokemon/20.png" width="200" height="200" alt="Raticate"> <br>020 Raticate</br>
+                <img src="pokemon/20.png" class="pokeImage" width="200" height="200" alt="Raticate"> <br>020 Raticate
             </li>
         </ul>
 
-        <footer>
-            <p>
-                Source Material:<br>
-                Pokemon data set from <a href="dataURL">https://www.kaggle.com/kvpratama/pokemon-images-dataset</a><br>
-                pokemon excel from <a href="excelURL">https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/</a><br>
-            </p>
-        </footer>
+        <div>
+            <footer>
+                <p>
+                    <br>
+                    Source Material:<br>
+                    Pokemon data set from <a href="dataURL">https://www.kaggle.com/kvpratama/pokemon-images-dataset</a><br>
+                    pokemon excel from <a href="excelURL">https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/</a><br>
+                </p>
+            </footer>
+        </div>
+        
 
         <script src="app.js"></script>
         <!-- Embedded JavaScript go here -->
