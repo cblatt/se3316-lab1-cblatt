@@ -83,6 +83,8 @@ function numFunc2(){
             // adding image to list
             var image = document.createElement('img');
             image.src = 'pokemon/' + (i+1) + '.png';
+            image.style.width = '60px';
+            image.style.height = '60px';
             pokemonList.appendChild(image);
                     
             // adding name to list
