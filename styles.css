@@ -1,6 +1,10 @@
 body{
     color: green;
 }
+#pokemonList{
+  text-align: center;
+  font-size: 18px;
+}
 ul{
     list-style-type: none;
 }
@@ -30,4 +34,10 @@ ul li{
     position: relative;
     height: 200px;
     margin-top: -200px;
+    font-size: 22px;
+    color: black;
+  }
+  #dynamicList{
+    color: black;
+    font-size: 25px;
   }

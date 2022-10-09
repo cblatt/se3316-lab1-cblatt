@@ -79,7 +79,6 @@ var pokemonList = document.getElementById("pokemon"); // variable to hold pokemo
 function numFunc2(){
     for(var i=0; i<20; i++){
         if(pokeNum[i] == numText.value){
-            var lineBreak = document.createElement("br"); // line break element
                     
             // adding image to list
             var image = document.createElement('img');
@@ -105,6 +104,9 @@ function numFunc2(){
             // adding rarity to list
             var rarNode = document.createTextNode(", Rarity: " + pokeRar[i]);
             pokemonList.appendChild(rarNode); 
+
+            // adding line break to list
+            var lineBreak = document.createElement("br");
             pokemonList.appendChild(lineBreak);
         }
     }  
