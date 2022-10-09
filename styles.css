@@ -41,3 +41,11 @@ ul li{
     color: black;
     font-size: 25px;
   }
+  img{
+    width: 100px;
+    height: 100px;
+  }
+  #pokeImage{
+    width: 200px;
+    height: 200px;
+  }
