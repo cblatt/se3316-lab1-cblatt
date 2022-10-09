@@ -162,38 +162,3 @@ function nameFunc2(){
 // event listeners for name text box
 nameText.addEventListener('keyup', clearList); // clear the list on each keypress
 nameText.addEventListener('keyup', nameFunc2); // search for pokemon on each keypress
-
-
-
-
-
-// this is how you dynamically check for pokemon with textbox (runs every time you press a key)
-//nameText.addEventListener('keyup', nameFunc);
-
-/*
-var pokemonList = document.getElementById("pokemon"); // getting the unordered list that we will add pokemon to
-function newFunc(){
-    if(/^[a-zA-Z]+$/.test(nameText.value)){ // making sure input is only a-z and A-Z
-        var names = ""; // empty string to hold the pokemon info
-        for(var i=0; i<20; i++){ // looping through pokeNames array and checking if the elements include the textbox input
-            if(pokeName[i].toLowerCase().includes(nameText.value.toLowerCase())){
-               names += "Name: " + pokeName[i] + "\nNumber: " + pokeNum[i] + "\nGeneration: " + pokeGen[i] + "\nRegion: " + pokeReg[i] + "\nRarity: " + pokeRar[i] + "\n\n";
-            }
-        }
-        if(names.length === 0){
-            alert("No pokemon found");
-        }
-        else{
-            var node = document.createElement("li");
-            var attribute = document.createAttribute("img");
-            attribute.value = "pokemon/19.png"
-            node.setAttributeNode(attribute);
-            pokemonList.appendChild(node);
-        }
-    }
-    else{
-        alert("Invalid input");
-    }
-}
-nameBtn.addEventListener('click', newFunc);
-*/
